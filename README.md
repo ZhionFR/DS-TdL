@@ -2,12 +2,12 @@
 [TOC]
 
 ### VSCODE EXTENSION :
-**Live Share**
-**Live Server**
-Makefile Tools
-Markdown All in One
-Markdown Preview Enhanced
-Yash
+-**Live Share**
+-**Live Server**
+-Makefile Tools
+-Markdown All in One
+-Markdown Preview Enhanced
+-Yash
 
 ## TODO :
 ### Question 1
