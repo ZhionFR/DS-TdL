@@ -1,0 +1,22 @@
+%{
+#include <stdio.h>
+#include <string.h>
+
+char SECT[100];
+int bool;
+%}
+
+%%
+
+"<DOCUMENT"               { printf("DEBUT DOC\n"); strcpy(SECT, "DOCUMENT"); bool = 1; }
+"<VERSION"                { printf("DEBUT VERSION\n"); strcpy(SECT, "VERSION"); bool = 1; }
+"<DATE"                   { printf("DEBUT DATE\n"); strcpy(SECT, "DATE"); bool = 1; }
+"<TITRE"                  { printf("DEBUT TITRE\n"); strcpy(SECT, "TITRE"); bool = 1; }
+"<SECTION"                { printf("DEBUT SECTION\n"); bool = 0; }
+"</SECTION>"              { printf("FIN SECTION\n"); }0
+"<IMAGE"                  { printf("DEBUT IMAGE\n"); srcpy(SECT, "IMAGE"); }
+">"                       { if (bool){ printf("FIN %s\n",SECT); bool = 1; } }
+\"[^\"]*\"                { printf("VALEUR: %s\n", yytext); } // Pour les valeurs entre guillemets
+[ \t]                     { /* Ignorer les espaces et les tabulations */ }
+[^<>\n]+                  { /* Ignorer le texte ordinaire */ }
+[\n]                      { /* Ignorer les retours à la ligne */ }
