@@ -519,10 +519,9 @@ int isDate = 0;
 int isTitle = 0;
 int isImage = 0;
 int isSection = 0;
-int compteur = 6;
 
+#line 524 "lex.yy.c"
 #line 525 "lex.yy.c"
-#line 526 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -739,10 +738,10 @@ YY_DECL
 		}
 
 	{
-#line 18 "DS_2.lex"
+#line 17 "DS_2.lex"
 
 
-#line 746 "lex.yy.c"
+#line 745 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -801,108 +800,108 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 20 "DS_2.lex"
+#line 19 "DS_2.lex"
 {
-    return(DEBUT_DOC);
+    return DEBUT_DOC;
     isBalise = 1;
     isDocName = 1;
 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 25 "DS_2.lex"
+#line 24 "DS_2.lex"
 {
-    return(DEBUT_VERSION);
+    return DEBUT_VERSION;
     isBalise = 1;
     isVersion = 1;
 }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 30 "DS_2.lex"
+#line 29 "DS_2.lex"
 {
-    return(DEBUT_DATE);
+    return DEBUT_DATE;
     isDate = 1;
 }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 34 "DS_2.lex"
+#line 33 "DS_2.lex"
 {
-    return(DEBUT_TITRE);
+    return DEBUT_TITRE;
     isBalise = 1;
     isTitle = 1;
 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 39 "DS_2.lex"
+#line 38 "DS_2.lex"
 {
-    return(DEBUT_SECTION);
+    return DEBUT_SECTION;
     isBalise = 0;
     isSection = 1;
 }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 44 "DS_2.lex"
+#line 43 "DS_2.lex"
 {
-    return(FIN_SECTION);
+    return FIN_SECTION;
     isBalise = 1;
 }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 48 "DS_2.lex"
+#line 47 "DS_2.lex"
 {
-    return(DEBUT_IMAGE);
+    return DEBUT_IMAGE;
     isBalise = 1;
     isImage = 1;
 }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 53 "DS_2.lex"
+#line 52 "DS_2.lex"
 {
     if (isBalise){
-        return(FIN_BALISE);
+        return FIN_BALISE;
         isBalise = 1;
     }
 }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 59 "DS_2.lex"
+#line 58 "DS_2.lex"
 {
-    return(FIN_DOC);
+    return FIN_DOC;
 }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 63 "DS_2.lex"
+#line 62 "DS_2.lex"
 {
     if (isImage){
-        return(IMAGE);
+        return IMAGE;
         isImage = 0;
     }
 }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 69 "DS_2.lex"
+#line 68 "DS_2.lex"
 { 
     if (isVersion){
-        return(NUM_VERSION);
+        return NUM_VERSION;
         isVersion = 0;
     }
 }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 75 "DS_2.lex"
+#line 74 "DS_2.lex"
 {
    if (isDate){
-        return(DATE);
+        return DATE;
         isDate = 0;
     }
 }
@@ -910,14 +909,14 @@ YY_RULE_SETUP
 case 13:
 /* rule 13 can match eol */
 YY_RULE_SETUP
-#line 81 "DS_2.lex"
+#line 80 "DS_2.lex"
 {
    if (isTitle){
-        return(TITRE);
+        return TITRE;
         isTitle = 0;
    }else{
         if (isSection){
-            return(SECTION);
+            return SECTION;
             isSection = 0;
         }
    }
@@ -925,10 +924,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 92 "DS_2.lex"
+#line 91 "DS_2.lex"
 {
     if (isDocName){
-        return(NOM_DOC);
+        return NOM_DOC;
         isDocName = 0;
     }
 }
@@ -936,32 +935,32 @@ YY_RULE_SETUP
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 98 "DS_2.lex"
+#line 97 "DS_2.lex"
 {
-    return(CHAINE);
+    return CHAINE;
 }
 	YY_BREAK
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
-#line 103 "DS_2.lex"
+#line 102 "DS_2.lex"
 {
     /* Ignorer les \n */
 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 106 "DS_2.lex"
+#line 105 "DS_2.lex"
 {
     /* Ignorer les espaces et tabulations */
 }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 109 "DS_2.lex"
+#line 108 "DS_2.lex"
 ECHO;
 	YY_BREAK
-#line 965 "lex.yy.c"
+#line 964 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1966,4 +1965,4 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 109 "DS_2.lex"
+#line 108 "DS_2.lex"

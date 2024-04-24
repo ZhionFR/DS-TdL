@@ -6,20 +6,23 @@
 
 %%
 
-S : S1 S2 FIN_DOC { printf("Document accepté"); YYACCEPT ; }
-S1 : DEBUT_DOC NOM_DOC FIN_BALISE DEBUT_VERSION NUM_VERSION FIN_BALISE DEBUT_DATE DATE FIN_BALISE DEBUT_TITRE TITRE FIN_BALISE 
-S2 : DEBUT_SECTION SECTION S3 FIN_SECTION S2
-   | 
-   ;
-S3 : S2
-   | DEBUT_IMAGE IMAGE FIN_BALISE S3
-   | CHAINE S3
-   ;
+S              : doc version date titre section FIN_DOC { printf("Document accepté"); YYACCEPT ; }
+doc            : DEBUT_DOC NOM_DOC FIN_BALISE
+version        : DEBUT_VERSION NUM_VERSION FIN_BALISE
+date           : DEBUT_DATE DATE FIN_BALISE
+titre          : DEBUT_TITRE TITRE FIN_BALISE 
+section        : DEBUT_SECTION SECTION soussection section FIN_SECTION section
+               | 
+               ;
+soussection    : DEBUT_IMAGE IMAGE FIN_BALISE soussection
+               | CHAINE soussection
+               | 
+               ;
 
 %%
 
 #include "lex.yy.c"
 int main(){
     yyparse();
-    printf("voilà, j'ai interprété");
+    printf("voilà, j'ai interprété\n");
 }

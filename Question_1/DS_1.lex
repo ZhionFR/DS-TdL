@@ -9,7 +9,6 @@ int isDate = 0;
 int isTitle = 0;
 int isImage = 0;
 int isSection = 0;
-int compteur = 6;
 
 %}
 

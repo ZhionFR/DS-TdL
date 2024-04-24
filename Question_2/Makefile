@@ -7,5 +7,5 @@ run: DS_2
 	./DS_2 < DS_exemple.txt > DS_Output.txt
 
 clean:
-	rm -f DS_1 lex.yy.c
+	rm -f DS_2 lex.yy.c
 

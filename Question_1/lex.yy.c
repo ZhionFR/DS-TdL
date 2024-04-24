@@ -519,11 +519,9 @@ int isDate = 0;
 int isTitle = 0;
 int isImage = 0;
 int isSection = 0;
-char TEXT[15];
-int compteur = 6;
 
-#line 526 "lex.yy.c"
-#line 527 "lex.yy.c"
+#line 524 "lex.yy.c"
+#line 525 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -740,10 +738,10 @@ YY_DECL
 		}
 
 	{
-#line 21 "DS_1.lex"
+#line 17 "DS_1.lex"
 
 
-#line 747 "lex.yy.c"
+#line 745 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -802,7 +800,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "DS_1.lex"
+#line 19 "DS_1.lex"
 {
     printf("DEBUT_DOC ");
     isBalise = 1;
@@ -811,7 +809,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 28 "DS_1.lex"
+#line 24 "DS_1.lex"
 {
     printf("DEBUT_VERSION ");
     isBalise = 1;
@@ -820,7 +818,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 33 "DS_1.lex"
+#line 29 "DS_1.lex"
 {
     printf("DEBUT_DATE ");
     isDate = 1;
@@ -828,7 +826,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 37 "DS_1.lex"
+#line 33 "DS_1.lex"
 {
     printf("DEBUT_TITRE ");
     isBalise = 1;
@@ -837,7 +835,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 42 "DS_1.lex"
+#line 38 "DS_1.lex"
 {
     printf("DEBUT_SECTION ");
     isBalise = 0;
@@ -846,7 +844,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 47 "DS_1.lex"
+#line 43 "DS_1.lex"
 {
     printf("FIN_SECTION ");
     isBalise = 1;
@@ -854,7 +852,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 51 "DS_1.lex"
+#line 47 "DS_1.lex"
 {
     printf("DEBUT_IMAGE ");
     isBalise = 1;
@@ -863,7 +861,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 56 "DS_1.lex"
+#line 52 "DS_1.lex"
 {
     if (isBalise){
         printf("FIN_BALISE ");
@@ -873,14 +871,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 62 "DS_1.lex"
+#line 58 "DS_1.lex"
 {
     printf("FIN_DOC");
 }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 66 "DS_1.lex"
+#line 62 "DS_1.lex"
 {
     if (isImage){
         printf("IMAGE ");
@@ -890,7 +888,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 72 "DS_1.lex"
+#line 68 "DS_1.lex"
 { 
     if (isVersion){
         printf("NUM_VERSION ");
@@ -900,7 +898,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 78 "DS_1.lex"
+#line 74 "DS_1.lex"
 {
    if (isDate){
         printf("DATE ");
@@ -911,7 +909,7 @@ YY_RULE_SETUP
 case 13:
 /* rule 13 can match eol */
 YY_RULE_SETUP
-#line 84 "DS_1.lex"
+#line 80 "DS_1.lex"
 {
    if (isTitle){
         printf("TITRE ");
@@ -926,7 +924,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 95 "DS_1.lex"
+#line 91 "DS_1.lex"
 {
     if (isDocName){
         printf("NOM_DOC ");
@@ -937,7 +935,7 @@ YY_RULE_SETUP
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 101 "DS_1.lex"
+#line 97 "DS_1.lex"
 {
     printf("CHAINE ");
 }
@@ -945,24 +943,24 @@ YY_RULE_SETUP
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
-#line 106 "DS_1.lex"
+#line 102 "DS_1.lex"
 {
     /* Ignorer les \n */
 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 109 "DS_1.lex"
+#line 105 "DS_1.lex"
 {
     /* Ignorer les espaces et tabulations */
 }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 112 "DS_1.lex"
+#line 108 "DS_1.lex"
 ECHO;
 	YY_BREAK
-#line 966 "lex.yy.c"
+#line 964 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1967,4 +1965,4 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 112 "DS_1.lex"
+#line 108 "DS_1.lex"
