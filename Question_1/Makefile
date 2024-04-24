@@ -7,3 +7,4 @@ run: DS_1
 
 clean:
 	rm -f DS_1 lex.yy.c
+
