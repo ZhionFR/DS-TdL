@@ -106,4 +106,6 @@ noQuote [^\"]
     /* Ignorer les espaces et tabulations */
 }
 
+%%
+
 /* hmmm */
